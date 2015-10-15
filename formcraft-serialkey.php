@@ -3,7 +3,7 @@
 	/*
 	Plugin Name: FormCraft SerialKey Add-On
 	Plugin URI: http://formcraft-wp.com/addons/serialkey/
-	Description: Serial key validatior Add-on for FormCraft
+	Description: Serial key validator Add-on for FormCraft
 	Author: Riyadh Al Nur
 	Author URI: http://verticalaxisbd.com/
 	Version: 1.0.0
@@ -42,7 +42,7 @@
 		foreach ($raw_content as $key => $value) {
 			if ($value['label'] == 'Serial') {
 				$encodedKey = rawurlencode($value['value']);
-				$response = wp_remote_get($remote_server"?key=".$encodedKey);
+				$response = wp_remote_get($remote_server."?key=".$encodedKey);
 
 				if (is_wp_error($response)) {
 					$fc_final_response['failed'] = $response->get_error_message();
